@@ -1,0 +1,136 @@
+/* Edmondson Village 4 Pty Ltd: small additions to the Tailwind utilities */
+
+html {
+  scroll-padding-top: 4.75rem;
+  -webkit-text-size-adjust: 100%;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+/* The hidden attribute always wins over display utilities */
+[hidden] {
+  display: none !important;
+}
+
+/* Skip link */
+.skip-link {
+  position: absolute;
+  left: 1rem;
+  top: -6rem;
+  z-index: 100;
+  padding: 0.75rem 1.25rem;
+  border-radius: 0.75rem;
+  background-color: #1E2629;
+  color: #F5F2EC;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.skip-link:focus {
+  top: 1rem;
+}
+
+/* Focus states */
+:focus-visible {
+  outline: 3px solid #B8743D;
+  outline-offset: 3px;
+}
+
+.on-dark :focus-visible {
+  outline-color: #F5F2EC;
+}
+
+[tabindex="-1"]:focus {
+  outline: none;
+}
+
+/* Soft background wash behind the hero */
+.hero-wash {
+  background:
+    radial-gradient(60rem 28rem at 8% -12%, rgba(46, 94, 78, 0.11), transparent 62%),
+    radial-gradient(40rem 22rem at 100% 0%, rgba(184, 116, 61, 0.08), transparent 60%);
+}
+
+/* Clearly marked placeholders for details that are not confirmed yet */
+.placeholder-tag {
+  display: inline-block;
+  border: 1px dashed #8C9A94;
+  border-radius: 0.375rem;
+  background-color: rgba(140, 154, 148, 0.14);
+  color: #3B4542;
+  padding: 0.125rem 0.5rem;
+  font-size: 0.9375em;
+  font-weight: 500;
+}
+
+/* Form validation */
+input[aria-invalid="true"],
+select[aria-invalid="true"],
+textarea[aria-invalid="true"] {
+  border-color: #B42318;
+  box-shadow: 0 0 0 1px #B42318;
+}
+
+.field-error {
+  margin-top: 0.375rem;
+  color: #B42318;
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+.form-status {
+  margin-top: 1rem;
+  border: 1px solid transparent;
+  border-radius: 0.75rem;
+  padding: 0.875rem 1rem;
+  font-size: 0.9375rem;
+  line-height: 1.55;
+}
+
+.form-status:empty {
+  margin: 0;
+  border: 0;
+  padding: 0;
+}
+
+.form-status--notice {
+  border-color: rgba(184, 116, 61, 0.5);
+  background-color: #FBF3EA;
+  color: #5C3718;
+}
+
+.form-status--error {
+  border-color: rgba(180, 35, 24, 0.35);
+  background-color: #FDF0EF;
+  color: #8A1C13;
+}
+
+.form-status--success {
+  border-color: rgba(46, 94, 78, 0.35);
+  background-color: #E4ECE8;
+  color: #1F4337;
+}
+
+/* Legal dialogs */
+dialog::backdrop {
+  background-color: rgba(30, 38, 41, 0.62);
+}
+
+html:has(dialog[open]) {
+  overflow: hidden;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
