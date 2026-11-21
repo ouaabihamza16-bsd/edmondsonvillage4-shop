@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://edmondsonvillage4.shop/sitemap.xml
+Sitemap: https://edmondsonvillage4ptyltd.shop/sitemap.xml
